@@ -1,0 +1,51 @@
+let mapleader=" "
+
+"""-- plugins --
+set NERDTree
+set surround
+set multiple-cursors
+set commentary
+set highlightedyank
+
+
+if !exists('##TextYankPost')
+	  nmap y <Plug>(highlightedyank)
+	  xmap y <Plug>(highlightedyank)
+	  omap y <Plug>(highlightedyank)
+	endif
+
+""--actions
+nmap <C-s> :w<CR>
+nmap <C-q> :q<CR>
+nmap <C-S-q> :qa<CR>
+nmap <C-r> <Action>(Run)
+nmap <C-S-r> <Action>(Rerun)
+imap <C-S-p> <Action>(ParameterInfo)
+
+""--multiple cursors
+nmap <C-n> <Plug>NextWholeOccurrence
+xmap <C-n> <Plug>NextWholeOccurrence
+nmap g<C-n> <Plug>NextOccurrence
+xmap g<C-n> <Plug>NextOccurrence
+xmap <C-x> <Plug>SkipOccurrence
+xmap <C-p> <Plug>RemoveOccurrence
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+"" -- Mapping Shortcut
+map <leader>i <Action>(OptimizeImports)
+map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>d <Action>(Debug)
+map <leader>c <Action>(Stop)
+map <leader>r <Action>(ReformatCode)
+map <leader>t :NERDTreeToggle<CR>
+map <leader>o :NERDTreeFind<CR>
